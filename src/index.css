@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  /* Remove the following line to allow scrolling on the page */
+  /* overflow-y: hidden; */ 
+}
+
+.ContentWrapper-sc-__sc-1ks3v0d-5 #agent-bar {
+  display: none !important;
+}
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.ContentWrapper-sc-__sc-1ks3v0d-5 #agent-bar {
+  display: none !important;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Hide iframe scrollbar */
+iframe {
+  scrollbar-width: none !important;  /* Firefox */
+  -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
+  overflow: hidden !important; /* Ensure content doesn't scroll */
+}
+
+iframe::-webkit-scrollbar {
+  display: none !important;  /* Chrome, Safari, and Opera */
+}
+
+/* Remove general scrollbars for divs that should not scroll */
+.no-scrollbar::-webkit-scrollbar {
+  width: 0 !important;  /* Remove scrollbar width */
+  height: 0 !important; /* Remove scrollbar height */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;     /* Firefox */
+  overflow: hidden !important; /* Prevent any scrollbars from appearing */
+}
+
+/* Ensure proper link behavior */
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit; /* Ensure links adopt the inherited text color */
+}
+
+/* Style adjustments to avoid unnecessary scroll in modal containers */
+.modal-content {
+  max-height: 90vh; /* Ensure modal doesn't exceed viewport height */
+  overflow-y: auto; /* Allow scrolling only within the modal when needed */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+}
+
+/* General styling for form components inside the modal */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+/* Enhancing button appearance */
+button {
+  cursor: pointer;
+}
+
+/* Focused button state */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6); /* Blue border for focus indication */
+}
+
+body.modal-open .live-chat-widget {
+  display: none !important;
+}
